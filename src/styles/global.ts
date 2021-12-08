@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -8,21 +8,31 @@ export const GlobalStyle = createGlobalStyle`
   button {
     border:none;
     outline: none;
+    cursor: pointer;
   }
 
-  input {
+  input, textarea {
     background-color: #fff;
     border: none;
     outline: none;
-  }
+    &:focus, &:hover {
+      border: 2px solid #67A1F9;
 
-  input:focus {
-    border: 2px solid #67A1F9;
+    }
   }
-
+  
   ul, li {
     list-style: none;
     margin: 0;
     padding: 0;
   }
+
+  a{
+    text-decoration: none;
+  }
 `
+export const FlexBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
