@@ -32,7 +32,6 @@ export const joinRoom = (roomId: string, userId: string) => (dispatch: Dispatch<
 
 export const leaveRoom = (roomId: string, userId: string, topics: { roomTopic: string; chatTopic: string }) => (dispatch: Dispatch<SetTopicAction>) => {
   APIService.leaveRoom(roomId, userId).then(() => {
-    MQTTService.unSub([topics.roomTopic, topics.chatTopic]);
     dispatch({
       type: ChatActionTypes.SET_TOPIC,
       payload: {

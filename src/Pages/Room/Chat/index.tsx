@@ -61,6 +61,7 @@ const ChatRoom: FC<{ roomId: string }> = ({ roomId }) => {
 
   const onLeaveRoom = () => {
     dispatch(leaveRoom(roomId, user.id, { roomTopic, chatTopic }));
+    MQTTService.unSub([roomTopic, chatTopic]);
   }
 
   return (
