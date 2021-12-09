@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   
-  ul, li {
+  ul, li, p, h3 {
     list-style: none;
     margin: 0;
     padding: 0;

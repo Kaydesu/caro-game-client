@@ -109,7 +109,7 @@ export interface SetTopicAction {
 
 export interface ReceiveMessageAction {
   type: ChatActionTypes.ADD_MESSAGE;
-  payload: Conversation;
+  payload: Conversation[] | Conversation;
 }
 
 export type ChatActionUnion = SetTopicAction | ReceiveMessageAction;

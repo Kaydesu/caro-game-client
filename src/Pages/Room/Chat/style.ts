@@ -21,6 +21,8 @@ export const ChatWrapperStyle = styled.div`
     background: #FFFFFF;
     border-radius: 16px;
     left: 20px;
+    padding: 20px 15px;
+    overflow-y: auto;
   }
   textarea {
     padding: 12px;
@@ -28,4 +30,23 @@ export const ChatWrapperStyle = styled.div`
     border-radius: 10px;
     width: auto;
   }
+`;
+
+export const ChatBubble = styled.li`
+  text-align: left;
+  margin-bottom: 12px;
+
+  &.align-right {
+    text-align: right;
+  }
+
+  .message-container {
+    background: #417771;
+    color: #fff;
+    display:inline-block; 
+    border-radius: 12px 12px 12px 0;
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+
 `;

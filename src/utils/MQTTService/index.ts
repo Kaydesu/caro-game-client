@@ -68,6 +68,7 @@ class MQTTService {
   sub(topics: string[]): Promise<unknown>[] {
     const promises = topics.map(topic => new Promise((resolve, reject) => {
       if (this._client) {
+        console.log(topic);
         this._client.subscribe(topic, { qos: 0 }, (error) => {
           if (error) {
             reject(error);
@@ -88,7 +89,8 @@ class MQTTService {
 
   handleTopic(topic: string | string[], callback: Function) {
     this._client.on('message', (msgTopic, payload) => {
-      const match = typeof topic === 'string' ? topic === msgTopic : topic.includes(msgTopic)
+      const match = typeof topic === 'string' ? topic === msgTopic : topic.includes(msgTopic);
+      console.log(msgTopic, match);
       if (match) {
         const data = JSON.parse(payload.toString());
         callback(data, msgTopic);

@@ -15,10 +15,15 @@ export const chatReducer = (state: Chat = initialState, action: ChatActionUnion)
         chatTopic: action.payload.chatTopic,
       }
     case ChatActionTypes.ADD_MESSAGE:
-      const newList = state.conversations.concat(action.payload);
+      let newList;
+      if (Array.isArray(action.payload)) {
+        newList = action.payload;
+      } else {
+        newList = [...state.conversations].concat(action.payload);
+      }
       return {
         ...state,
-        conservations: newList,
+        conversations: newList,
       }
     default:
       return state;
