@@ -11,7 +11,7 @@ const GameBoard = () => {
         Start
       </Button>
       <div className="board"></div> */}
-      <h1>Game is not Available</h1>
+      <h1>Gameplay is comming soon</h1>
     </GameBoardWrapperStyle>
   );
 };

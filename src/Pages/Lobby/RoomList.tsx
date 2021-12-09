@@ -7,6 +7,12 @@ import { Room } from "../../redux/types";
 const BoardStyle = styled.div`
   width: calc(100vw - 273px);
   height: 100vh;
+
+  h3 {
+    margin-top: 20px;
+    padding: 10px 0;
+  }
+
 `;
 
 const HiddenPanel = styled.div`
@@ -55,6 +61,7 @@ const RoomList: FunctionComponent<{ data: Room[] }> = ({ data }) => {
 
   return (
     <BoardStyle>
+      <h3>Room List</h3>
       <CardContainer>
         {data && data.length > 0 ? renderRoomList() : <h1>No data found</h1>}
       </CardContainer>

@@ -21,6 +21,7 @@ const CreateRoom = () => {
   return (
     <LeftBar>
       <div className="create-room">
+        <h3>Create Room</h3>
         <Input onChange={handleOnChange} />
         <Button onClick={handleCreateRoom}>
           Create
